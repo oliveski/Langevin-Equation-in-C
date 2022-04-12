@@ -1,6 +1,6 @@
 // João Vitor Oliveski Mesquita
 // Março de 2022
-// gcc [-O3] langevin.c -o exe -lm
+// gcc [-O3] langevin.c -o exe -lm -lgsl -lgslcblas
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -198,6 +198,7 @@ int main(){
 		free(vel[i]);
 		free(corr[i]);
 	}
-
+	gsl_rng_free(r);
+	
 	return 0;
 }
